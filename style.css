@@ -1,0 +1,356 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f5f6fa;
+  min-height: 100vh;
+  color: #1a1a2e;
+}
+
+.app-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.page-header {
+  background: #fff;
+  padding: 28px 36px 24px;
+  border-bottom: 1px solid #e8eaf0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.header-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.5px solid #e2e8f0;
+  color: #64748b;
+  background: transparent;
+  transition: all 0.15s;
+}
+
+.nav-btn:hover {
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+.nav-btn.active {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #4a90d9;
+}
+
+/* STATS */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.stat-card {
+  padding: 20px 36px;
+  border-right: 1px solid #e8eaf0;
+}
+.stat-card:last-child { border-right: none; }
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'DM Mono', monospace;
+  color: #0f172a;
+}
+
+.stat-value.green { color: #16a34a; }
+.stat-value.red { color: #dc2626; }
+
+/* JOBS SECTION */
+.jobs-section {
+  background: #fff;
+  margin: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.jobs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 0;
+}
+
+.jobs-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.jobs-count {
+  font-size: 13px;
+  color: #94a3b8;
+  font-family: 'DM Mono', monospace;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 16px 24px 0;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.tab {
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: transparent;
+  transition: all 0.15s;
+  position: relative;
+  bottom: -1px;
+}
+
+.tab:hover { color: #334155; }
+
+.tab.active {
+  color: #2563eb;
+  background: #fff;
+  border-color: #e2e8f0;
+  border-bottom-color: #fff;
+}
+
+/* JOB CARDS */
+.jobs-list { padding: 8px 0; }
+
+.job-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.12s;
+  animation: fadeSlide 0.25s ease both;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.job-card:last-child { border-bottom: none; }
+.job-card:hover { background: #fafbff; }
+
+.job-info { flex: 1; }
+
+.job-company {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.job-role {
+  font-size: 13px;
+  color: #4a90d9;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.job-meta {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.meta-dot { color: #cbd5e1; }
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.status-badge.not_applied { background: #f1f5f9; color: #64748b; }
+.status-badge.interview { background: #dcfce7; color: #16a34a; }
+.status-badge.rejected { background: #fef2f2; color: #dc2626; }
+
+.job-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  max-width: 640px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: 1.5px solid;
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+  background: transparent;
+}
+
+.btn-interview {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+.btn-interview:hover, .btn-interview.active {
+  background: #16a34a;
+  color: #fff;
+}
+
+.btn-rejected {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+.btn-rejected:hover, .btn-rejected.active {
+  background: #dc2626;
+  color: #fff;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #cbd5e1;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+.delete-btn:hover { color: #ef4444; }
+
+/* APPLIED PAGE */
+.applied-page {
+  margin: 24px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.applied-page-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e8eaf0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.applied-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.applied-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  padding: 12px 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.applied-table td {
+  padding: 16px 24px;
+  font-size: 13px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.applied-table tr:last-child td { border-bottom: none; }
+.applied-table tr:hover td { background: #fafbff; }
+
+.td-company { font-weight: 600; color: #0f172a; }
+.td-role { color: #4a90d9; font-weight: 500; }
+
+/* EMPTY STATE */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  color: #94a3b8;
+}
+
+.empty-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.empty-sub {
+  font-size: 13px;
+  color: #94a3b8;
+}

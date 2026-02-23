@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Application Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <div class="main">
+
+      <!-- Header -->
+      <div class="page-header">
+        <div class="page-title">Job Application Tracker</div>
+        <div class="header-nav">
+          <div class="nav-btn active" id="btn-home" onclick="setPage('home')">Home</div>
+          <div class="nav-btn" id="btn-applied" onclick="setPage('applied')">Applied</div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Total</div>
+          <div class="stat-value" id="stat-total">8</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Interview</div>
+          <div class="stat-value green" id="stat-interview">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Rejected</div>
+          <div class="stat-value red" id="stat-rejected">0</div>
+        </div>
+      </div>
+
+      <!-- HOME PAGE -->
+      <div id="page-home">
+        <div class="jobs-section">
+          <div class="jobs-header">
+            <div class="jobs-title">Available Jobs</div>
+            <div class="jobs-count" id="jobs-count">8 jobs</div>
+          </div>
+
+          <div class="tabs">
+            <div class="tab active" id="tab-all" onclick="setTab('all')">All</div>
+            <div class="tab" id="tab-interview" onclick="setTab('interview')">Interview</div>
+            <div class="tab" id="tab-rejected" onclick="setTab('rejected')">Rejected</div>
+          </div>
+
+          <div class="jobs-list" id="jobs-list"></div>
+        </div>
+      </div>
+
+      <!-- APPLIED PAGE -->
+      <div id="page-applied" style="display:none;">
+        <div class="applied-page">
+          <div class="applied-page-header">
+            <div class="jobs-title">Applied Jobs</div>
+            <div class="jobs-count" id="applied-count">0 jobs</div>
+          </div>
+          <div id="applied-content"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
